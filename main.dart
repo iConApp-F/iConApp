@@ -1,12 +1,26 @@
 import 'package:flutter/material.dart';
+import 'settings.dart';
 
-void main() => runApp(MyApp());
+void main() {
+  runApp(MaterialApp(
+      title: 'iCons',
+      home: MyApp()));
+}
+
 class MyApp extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
-    return BodyWidget();
+    return new MaterialApp(
+      home: BodyWidget(),
+      routes: <String, WidgetBuilder>{
+        '/settings': (BuildContext context) => SecondRoute(),
+      },
+    );
   }
 }
+
+
+
 class Palette {
   // background gradient
   static Color iBrown = Color(0xFF8E3A37);
@@ -27,6 +41,10 @@ class BodyWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
         home: Scaffold(appBar: AppBar(title: Text('iCons'),
+            actions: <Widget>[IconButton(icon: Image.asset('images/gear.png'), onPressed:(){
+              Navigator.pushNamed(context, '/settings');
+              // or use: context, MaterialPageRoute(builder: (context) => SecondRoute()),
+            })],
             leading: IconButton(
               icon: Image.asset('images/app_swirl.png'), onPressed: (){},
             ),
