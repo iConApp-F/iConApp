@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="e031f0e2-1b9d-4648-a472-919918e26e85" name="Default Changelist" comment="Deleted old version of settings.dart" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1pfV7jnjxUDDGSfEGouUwfskDS6" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="android.sdk.path" value="$USER_HOME$/Library/Android/sdk" />
+    <property name="dart.analysis.tool.window.visible" value="false" />
+    <property name="settings.editor.selected.configurable" value="flutter.settings" />
+    <property name="show.migrate.to.gradle.popup" value="false" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/apsc_100m3_724_f/lib/screens" />
+    </key>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="e031f0e2-1b9d-4648-a472-919918e26e85" name="Default Changelist" comment="" />
+      <created>1615573965942</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1615573965942</updated>
+    </task>
+    <task id="LOCAL-00001" summary="Added screens folder">
+      <created>1615574173168</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1615574173168</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Commented out settings.dart as it doesn't work. So it doesn't mess with other files">
+      <created>1615830259186</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1615830259186</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Deleted old version of settings.dart">
+      <created>1615830373552</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1615830373552</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Added screens folder" />
+    <MESSAGE value="Commented out settings.dart as it doesn't work. So it doesn't mess with other files" />
+    <MESSAGE value="Deleted old version of settings.dart" />
+    <option name="LAST_COMMIT_MESSAGE" value="Deleted old version of settings.dart" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="-1299" y="25" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1615574032601">
+      <screen x="-1920" y="-155" width="1920" height="1055" />
+    </state>
+    <state x="-1299" y="25" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.25.1440.800/-1920.-155.1920.1055@-1920.-155.1920.1055" timestamp="1615574032601" />
+    <state x="241" y="59" key="SettingsEditor" timestamp="1615831276449">
+      <screen x="0" y="25" width="1440" height="803" />
+    </state>
+    <state x="-1262" y="2" key="SettingsEditor/0.25.1440.800/-1920.-155.1920.1055@-1920.-155.1920.1055" timestamp="1615574110147" />
+    <state x="241" y="59" key="SettingsEditor/0.25.1440.803/-1920.-155.1920.1055@0.25.1440.803" timestamp="1615831276449" />
+    <state x="568" y="211" key="Vcs.Push.Dialog.v2" timestamp="1615830375676">
+      <screen x="0" y="25" width="1440" height="803" />
+    </state>
+    <state x="-1163" y="90" key="Vcs.Push.Dialog.v2/0.25.1440.800/-1920.-155.1920.1055@-1920.-155.1920.1055" timestamp="1615574180288" />
+    <state x="568" y="211" key="Vcs.Push.Dialog.v2/0.25.1440.803/-1920.-155.1920.1055@0.25.1440.803" timestamp="1615830375676" />
+    <state x="501" y="344" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1615831021192">
+      <screen x="0" y="25" width="1440" height="803" />
+    </state>
+    <state x="501" y="344" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.25.1440.803/-1920.-155.1920.1055@0.25.1440.803" timestamp="1615831021192" />
+  </component>
+</project>
