@@ -9,6 +9,7 @@ void main() {
   runApp(MaterialApp(
     title: 'iCons',
     initialRoute: '/',
+    //creating routes
     routes: {
       '/': (context) => MyScaffold(),
       '/hours': (context) => Hours(),
