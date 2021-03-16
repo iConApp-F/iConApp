@@ -24,6 +24,7 @@ class MyScaffold extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // Material is a conceptual piece of paper on which the UI appears.
+    //AppBar starts here
     return Scaffold(appBar: AppBar(title: Text('iCons'),
         actions: <Widget>[IconButton(icon: Image.asset('lib/images/gear.png'), onPressed:(){
           // or use: context, MaterialPageRoute(builder: (context) => SecondRoute()),
@@ -45,6 +46,7 @@ class MyScaffold extends StatelessWidget {
                   begin: Alignment.centerLeft,
                   end: Alignment.centerRight,
                   colors: [Palette.iBrown, Palette.iGreen, Palette.iBlue]),))),
+      //END of AppBar
       // Column is a vertical, linear layout.
       body: Column(
         children: <Widget>[
