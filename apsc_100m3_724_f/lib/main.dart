@@ -1,117 +1,137 @@
 import 'package:flutter/material.dart';
+import 'screens/hours.dart';
+import 'screens/iConsStaff.dart';
+import 'screens/settings.dart';
+import 'screens/inventory.dart';
+
 
 void main() {
-  runApp(MyApp());
+  runApp(MaterialApp(
+    title: 'iCons',
+    initialRoute: '/',
+    routes: {
+      '/': (context) => MyScaffold(),
+      '/hours': (context) => Hours(),
+      '/staff': (context) => Staff(),
+      '/settings': (context) => Demo(),
+      '/inventory': (context) => IconsListView(),
+    },// used by the OS task switcher
+  ));
 }
 
-class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
+class MyAppBar extends StatelessWidget {
+  MyAppBar({this.title});
+
+  // Fields in a Widget subclass are always marked "final".
+
+  final Widget title;
+
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        // This is the theme of your application.
-        //
-        // Try running your application with "flutter run". You'll see the
-        // application has a blue toolbar. Then, without quitting the app, try
-        // changing the primarySwatch below to Colors.green and then invoke
-        // "hot reload" (press "r" in the console where you ran "flutter run",
-        // or simply save your changes to "hot reload" in a Flutter IDE).
-        // Notice that the counter didn't reset back to zero; the application
-        // is not restarted.
-        primarySwatch: Colors.blue,
-        // This makes the visual density adapt to the platform that you run
-        // the app on. For desktop platforms, the controls will be smaller and
-        // closer together (more dense) than on mobile platforms.
-        visualDensity: VisualDensity.adaptivePlatformDensity,
+    return Container(
+      height: 56.0, // in logical pixels
+      padding: const EdgeInsets.symmetric(horizontal: 8.0),
+      decoration: BoxDecoration(color: Colors.blue[500]),
+      // Row is a horizontal, linear layout.
+      child: Row(
+        // <Widget> is the type of items in the list.
+        children: <Widget>[
+          IconButton(
+            icon: Icon(Icons.menu),
+            tooltip: 'Navigation menu',
+            onPressed: null, // null disables the button
+          ),
+          // Expanded expands its child to fill the available space.
+          Expanded(
+            child: title,
+          ),
+          IconButton(
+            icon: Icon(Icons.search),
+            tooltip: 'Search',
+            onPressed: null,
+          ),
+        ],
       ),
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
-
-  // This widget is the home page of your application. It is stateful, meaning
-  // that it has a State object (defined below) that contains fields that affect
-  // how it looks.
-
-  // This class is the configuration for the state. It holds the values (in this
-  // case the title) provided by the parent (in this case the App widget) and
-  // used by the build method of the State. Fields in a Widget subclass are
-  // always marked "final".
-
-  final String title;
-
-  @override
-  _MyHomePageState createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      // This call to setState tells the Flutter framework that something has
-      // changed in this State, which causes it to rerun the build method below
-      // so that the display can reflect the updated values. If we changed
-      // _counter without calling setState(), then the build method would not be
-      // called again, and so nothing would appear to happen.
-      _counter++;
-    });
-  }
-
+class MyScaffold extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    // This method is rerun every time setState is called, for instance as done
-    // by the _incrementCounter method above.
-    //
-    // The Flutter framework has been optimized to make rerunning build methods
-    // fast, so that you can just rebuild anything that needs updating rather
-    // than having to individually change instances of widgets.
-    return Scaffold(
-      appBar: AppBar(
-        // Here we take the value from the MyHomePage object that was created by
-        // the App.build method, and use it to set our appbar title.
-        title: Text(widget.title),
-      ),
-      body: Center(
-        // Center is a layout widget. It takes a single child and positions it
-        // in the middle of the parent.
-        child: Column(
-          // Column is also a layout widget. It takes a list of children and
-          // arranges them vertically. By default, it sizes itself to fit its
-          // children horizontally, and tries to be as tall as its parent.
-          //
-          // Invoke "debug painting" (press "p" in the console, choose the
-          // "Toggle Debug Paint" action from the Flutter Inspector in Android
-          // Studio, or the "Toggle Debug Paint" command in Visual Studio Code)
-          // to see the wireframe for each widget.
-          //
-          // Column has various properties to control how it sizes itself and
-          // how it positions its children. Here we use mainAxisAlignment to
-          // center the children vertically; the main axis here is the vertical
-          // axis because Columns are vertical (the cross axis would be
-          // horizontal).
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text(
-              'You have pushed the button this many times:',
+    // Material is a conceptual piece of paper on which the UI appears.
+    return Material(
+      // Column is a vertical, linear layout.
+      child: Column(
+        children: <Widget>[
+          /*
+          * TODO: Make consistent with rest of group
+          * TODO: Add in the various icons, and centre the text + size it correctly to match the wireframe
+          * TODO: Change print statements to code that will go to the correct widget.
+          * TODO: Resize hours bar on the bottom. I need to figure out a way to do this in flutter.
+          * */
+          MyAppBar(
+            title: Text(
+              'App Bar',
+              style: Theme.of(context).primaryTextTheme.headline6,
             ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
-            ),
-          ],
-        ),
+          ),
+          GridView.count(
+            primary: false,
+            padding: const EdgeInsets.all(10),
+            crossAxisSpacing: 10,
+            mainAxisSpacing: 10,
+            crossAxisCount: 2,
+            scrollDirection: Axis.vertical,
+            shrinkWrap: true,
+            children: <Widget>[
+              OutlinedButton.icon(
+                label: Text('Rooms'),
+                icon: Icon(Icons.room),
+                onPressed: () {
+                  print('Go to Rooms');
+                },
+              ),
+              OutlinedButton.icon(
+                label: Text('Equipment'),
+                icon: Icon(Icons.bolt),
+                onPressed: () {
+                  print('Go to Equipment'); Navigator.pushNamed(context, '/inventory');
+                },
+              ),
+              OutlinedButton.icon(
+                label: Text('Help'),
+                icon: Icon(Icons.help),
+                onPressed: () {
+                  print('Go to Help'); Navigator.pushNamed(context, '/staff');
+                },
+              ),
+              OutlinedButton.icon(
+                label: Text('The Team'),
+                icon: Icon(Icons.people),
+                onPressed: () {
+                  print('Go to The Team'); Navigator.pushNamed(context, '/staff');
+                },
+              ),
+            ],
+          ),
+          Row(
+            children: <Widget>[
+              Expanded(
+                child:
+                OutlinedButton.icon(
+                  label: Text('Hours'),
+                  icon: Icon(Icons.date_range),
+                  onPressed: () {
+                    print('Go to Hours'); Navigator.pushNamed(context, '/hours');
+                  },
+                ),
+              ),
+            ],
+          ),
+        ],
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 }
+
