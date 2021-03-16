@@ -18,14 +18,15 @@ class iConStaffScreen extends StatelessWidget{
   Widget build (BuildContext context) {
     return new Scaffold(
       appBar: new AppBar(
-         //title of the screen
+        //title of the screen
           title: new Text('iCons Staff')
       ),
       //run the code that makes the widget for each staff member
-      body: BodyWidget(),
+      body: Staff(),
     );
   }
 }
+
 //add the names and programs of the staff
 var names = ['iCon Staff 1','iCon Staff 2','iCon Staff 3','iCon Staff 4','iCon Staff 5','iCon Staff 6','iCon Staff 7','iCon Staff 8','iCon Staff 9','iCon Staff 10'];
 var program = ['Computer Engineering', 'Mechanical Engineering','Engineering Physics','Civil Engineering','Computer Engineering','Electrical Engineering','Chemical Engineering','Computer Engineering','Mechanical Engineering','Computer Engineering','Electrical Engineering'];
@@ -38,7 +39,7 @@ var namefontsize = 18.0;
 //change the size of the images of the staff
 var imagesize = 40.0;
 //For each iCon staff widget
-class BodyWidget extends StatelessWidget{
+class Staff extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     //make a list view
