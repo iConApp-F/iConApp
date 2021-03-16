@@ -42,8 +42,7 @@ var imagesize = 40.0;
 class Staff extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
-    Hero(
-      child: Scaffold(
+      return new Scaffold(
         body: ListView(
             padding: const EdgeInsets.all(8),
             //used to create the widgets of each staff member
@@ -80,8 +79,7 @@ class Staff extends StatelessWidget{
                 )
             )
         )
-      )
-    );
+      );
   }
 }
 class iConTwoPage extends StatelessWidget{
