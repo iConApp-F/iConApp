@@ -1,4 +1,21 @@
 import 'package:flutter/material.dart';
+import 'hours.dart';
+import 'iConsStaff.dart';
+import 'settings.dart';
+
+
+void main() {
+  runApp(MaterialApp(
+    title: 'iCons',
+    initialRoute: '/',
+    routes: {
+      '/': (context) => MyScaffold(),
+      '/hours': (context) => Hours(),
+      '/staff': (context) => Staff(),
+      '/settings': (context) => Demo(),
+    },// used by the OS task switcher
+  ));
+}
 
 class MyAppBar extends StatelessWidget {
   MyAppBar({this.title});
@@ -84,14 +101,14 @@ class MyScaffold extends StatelessWidget {
               label: Text('Help'),
               icon: Icon(Icons.help),
               onPressed: () {
-                print('Go to Help');
+                print('Go to Help'); Navigator.pushNamed(context, '/staff');
               },
             ),
             OutlinedButton.icon(
               label: Text('The Team'),
               icon: Icon(Icons.people),
               onPressed: () {
-                print('Go to The Team');
+                print('Go to The Team'); Navigator.pushNamed(context, '/staff');
               },
             ),
             ],
@@ -104,7 +121,7 @@ class MyScaffold extends StatelessWidget {
                   label: Text('Hours'),
                   icon: Icon(Icons.date_range),
                   onPressed: () {
-                    print('Go to Hours');
+                    print('Go to Hours'); Navigator.pushNamed(context, '/hours');
                   },
                 ),
               ),
@@ -116,11 +133,3 @@ class MyScaffold extends StatelessWidget {
   }
 }
 
-void main() {
-  runApp(MaterialApp(
-    title: 'My app', // used by the OS task switcher
-    home: SafeArea(
-      child: MyScaffold(),
-    ),
-  ));
-}

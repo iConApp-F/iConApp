@@ -19,7 +19,17 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e031f0e2-1b9d-4648-a472-919918e26e85" name="Default Changelist" comment="Deleted old version of settings.dart" />
+    <list default="true" id="e59a29a1-9f43-4c1c-b4fb-c8a481be741b" name="Default Changelist" comment="deleted">
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apsc_100m3_724_f/android/local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/apsc_100m3_724_f/android/local.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apsc_100m3_724_f/lib/screens/homescreen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/apsc_100m3_724_f/lib/screens/homescreen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apsc_100m3_724_f/lib/screens/hours.dart" beforeDir="false" afterPath="$PROJECT_DIR$/apsc_100m3_724_f/lib/screens/hours.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apsc_100m3_724_f/lib/screens/iConsStaff.dart" beforeDir="false" afterPath="$PROJECT_DIR$/apsc_100m3_724_f/lib/screens/iConsStaff.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apsc_100m3_724_f/lib/screens/images" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apsc_100m3_724_f/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/apsc_100m3_724_f/pubspec.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apsc_100m3_724_f/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/apsc_100m3_724_f/pubspec.yaml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -28,7 +38,7 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectId" id="1pfV7jnjxUDDGSfEGouUwfskDS6" />
+  <component name="ProjectId" id="1pnstrx9a3ch2izW2g5WvEk68w1" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -36,49 +46,58 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="android.sdk.path" value="$USER_HOME$/Library/Android/sdk" />
     <property name="dart.analysis.tool.window.visible" value="false" />
+    <property name="io.flutter.reload.alreadyRun" value="true" />
     <property name="settings.editor.selected.configurable" value="flutter.settings" />
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/apsc_100m3_724_f/lib/screens" />
+      <recent name="C:\Users\Beni\AndroidStudioProjects\iConApp\apsc_100m3_724_f\lib\images" />
     </key>
+  </component>
+  <component name="RunManager" selected="Flutter.homescreen.dart">
+    <configuration name="homescreen.dart" type="FlutterRunConfigurationType" factoryName="Flutter" temporary="true" nameIsGenerated="true">
+      <option name="filePath" value="$PROJECT_DIR$/apsc_100m3_724_f/lib/screens/homescreen.dart" />
+      <method v="2" />
+    </configuration>
+    <configuration name="main.dart" type="FlutterRunConfigurationType" factoryName="Flutter" temporary="true" nameIsGenerated="true">
+      <option name="filePath" value="$PROJECT_DIR$/apsc_100m3_724_f/lib/main.dart" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Flutter.homescreen.dart" />
+        <item itemvalue="Flutter.main.dart" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="e031f0e2-1b9d-4648-a472-919918e26e85" name="Default Changelist" comment="" />
-      <created>1615573965942</created>
+      <changelist id="e59a29a1-9f43-4c1c-b4fb-c8a481be741b" name="Default Changelist" comment="" />
+      <created>1615830406913</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1615573965942</updated>
+      <updated>1615830406913</updated>
     </task>
-    <task id="LOCAL-00001" summary="Added screens folder">
-      <created>1615574173168</created>
+    <task id="LOCAL-00001" summary="moved files">
+      <created>1615830575673</created>
       <option name="number" value="00001" />
       <option name="presentableId" value="LOCAL-00001" />
       <option name="project" value="LOCAL" />
-      <updated>1615574173168</updated>
+      <updated>1615830575673</updated>
     </task>
-    <task id="LOCAL-00002" summary="Commented out settings.dart as it doesn't work. So it doesn't mess with other files">
-      <created>1615830259186</created>
+    <task id="LOCAL-00002" summary="deleted">
+      <created>1615831036756</created>
       <option name="number" value="00002" />
       <option name="presentableId" value="LOCAL-00002" />
       <option name="project" value="LOCAL" />
-      <updated>1615830259186</updated>
+      <updated>1615831036756</updated>
     </task>
-    <task id="LOCAL-00003" summary="Deleted old version of settings.dart">
-      <created>1615830373552</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1615830373552</updated>
-    </task>
-    <option name="localTasksCounter" value="4" />
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -91,32 +110,60 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Added screens folder" />
-    <MESSAGE value="Commented out settings.dart as it doesn't work. So it doesn't mess with other files" />
-    <MESSAGE value="Deleted old version of settings.dart" />
-    <option name="LAST_COMMIT_MESSAGE" value="Deleted old version of settings.dart" />
+    <MESSAGE value="moved files" />
+    <MESSAGE value="deleted" />
+    <option name="LAST_COMMIT_MESSAGE" value="deleted" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="-1299" y="25" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1615574032601">
-      <screen x="-1920" y="-155" width="1920" height="1055" />
+    <state x="648" y="273" key="#Notifications" timestamp="1615831724532">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="-1299" y="25" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.25.1440.800/-1920.-155.1920.1055@-1920.-155.1920.1055" timestamp="1615574032601" />
-    <state x="241" y="59" key="SettingsEditor" timestamp="1615831276449">
-      <screen x="0" y="25" width="1440" height="803" />
+    <state x="648" y="273" key="#Notifications/0.0.1536.824@0.0.1536.824" timestamp="1615831724532" />
+    <state x="218" y="65" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1615830636483">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="-1262" y="2" key="SettingsEditor/0.25.1440.800/-1920.-155.1920.1055@-1920.-155.1920.1055" timestamp="1615574110147" />
-    <state x="241" y="59" key="SettingsEditor/0.25.1440.803/-1920.-155.1920.1055@0.25.1440.803" timestamp="1615831276449" />
-    <state x="568" y="211" key="Vcs.Push.Dialog.v2" timestamp="1615830375676">
-      <screen x="0" y="25" width="1440" height="803" />
+    <state x="218" y="65" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1615830636483" />
+    <state x="161" y="100" width="1203" height="630" key="AVDManager" timestamp="1615862096622">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="-1163" y="90" key="Vcs.Push.Dialog.v2/0.25.1440.800/-1920.-155.1920.1055@-1920.-155.1920.1055" timestamp="1615574180288" />
-    <state x="568" y="211" key="Vcs.Push.Dialog.v2/0.25.1440.803/-1920.-155.1920.1055@0.25.1440.803" timestamp="1615830375676" />
-    <state x="501" y="344" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1615831021192">
-      <screen x="0" y="25" width="1440" height="803" />
+    <state x="161" y="100" width="1203" height="630" key="AVDManager/0.0.1536.824@0.0.1536.824" timestamp="1615862096622" />
+    <state x="536" y="170" key="FileChooserDialogImpl" timestamp="1615831278823">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="501" y="344" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.25.1440.803/-1920.-155.1920.1055@0.25.1440.803" timestamp="1615831021192" />
+    <state x="536" y="170" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1615831278823" />
+    <state width="1491" height="143" key="GridCell.Tab.0.bottom" timestamp="1615867575325">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1491" height="143" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1615867575325" />
+    <state width="1491" height="143" key="GridCell.Tab.0.center" timestamp="1615867575325">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1491" height="143" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1615867575325" />
+    <state width="1491" height="143" key="GridCell.Tab.0.left" timestamp="1615867575325">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1491" height="143" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1615867575325" />
+    <state width="1491" height="143" key="GridCell.Tab.0.right" timestamp="1615867575325">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1491" height="143" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1615867575325" />
+    <state x="265" y="60" key="SettingsEditor" timestamp="1615831283363">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="265" y="60" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1615831283363" />
+    <state x="384" y="148" key="Vcs.Push.Dialog.v2" timestamp="1615831050529">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="384" y="148" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1615831050529" />
+    <state x="566" y="329" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1615831861889">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="566" y="329" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1615831861889" />
+    <state x="483" y="204" key="git4idea.merge.GitPullDialog" timestamp="1615831871108">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="483" y="204" key="git4idea.merge.GitPullDialog/0.0.1536.824@0.0.1536.824" timestamp="1615831871108" />
   </component>
 </project>

@@ -1,26 +1,7 @@
 import 'package:flutter/material.dart';
-import 'settings.dart';
-
-void main() {
-  runApp(MaterialApp(
-      title: 'iCons',
-      home: MyApp()));
-}
-
-class MyApp extends StatelessWidget{
-  @override
-  Widget build(BuildContext context) {
-    return new MaterialApp(
-      home: BodyWidget(),
-      routes: <String, WidgetBuilder>{
-        '/settings': (BuildContext context) => SecondRoute(),
-      },
-    );
-  }
-}
 
 
-
+// creating a palette to use for the design throughout
 class Palette {
   // background gradient
   static Color iBrown = Color(0xFF8E3A37);
@@ -28,25 +9,23 @@ class Palette {
   static Color iBlue = Color(0xFF0B426B);
   //Others
   static Color greenLandLight = Color(0x4089ED91);
-
   static Color blueSkyLighter = Color(0x10068FFA);
 }
 
-class BodyWidget extends StatelessWidget {
-  const BodyWidget({
+class Hours extends StatelessWidget {
+  const Hours({
     Key key,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-        home: Scaffold(appBar: AppBar(title: Text('iCons'),
-            actions: <Widget>[IconButton(icon: Image.asset('images/gear.png'), onPressed:(){
-              Navigator.pushNamed(context, '/settings');
+    //beginning of the AppBar
+  return Scaffold(appBar: AppBar(title: Text('iCons'),
+            actions: <Widget>[IconButton(icon: Image.asset('lib/images/gear.png'), onPressed:(){
               // or use: context, MaterialPageRoute(builder: (context) => SecondRoute()),
             })],
             leading: IconButton(
-              icon: Image.asset('images/app_swirl.png'), onPressed: (){},
+              icon: Image.asset('lib/images/app_swirl.png'), onPressed: (){},
             ),
             flexibleSpace: Container(
             decoration: BoxDecoration(
@@ -62,6 +41,9 @@ class BodyWidget extends StatelessWidget {
             begin: Alignment.centerLeft,
             end: Alignment.centerRight,
             colors: [Palette.iBrown, Palette.iGreen, Palette.iBlue]),))),
+          //END of AppBar
+
+      //Beginning of Body with Hours text
           body: Center(child: Column( mainAxisAlignment: MainAxisAlignment.start, children: <Widget>[Expanded( child:
             Container( padding: EdgeInsets.all(20), child: Row( mainAxisAlignment: MainAxisAlignment.spaceEvenly,
     children: <Widget>[ Expanded( child: Container(
@@ -100,6 +82,6 @@ class BodyWidget extends StatelessWidget {
     )]))))],
           ),)
           )])))
-    );
+    ;
   }
 }
