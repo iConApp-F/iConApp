@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'hours.dart';
 import 'iConsStaff.dart';
 import 'settings.dart';
-import 'inventory.dart';
+//import 'inventory.dart';
 
 
 void main() {
@@ -14,7 +14,7 @@ void main() {
       '/hours': (context) => Hours(),
       '/staff': (context) => Staff(),
       '/settings': (context) => Demo(),
-      '/inventory': (context) => IconsListView(),
+    //  '/inventory': (context) => IconsListView(),
     },// used by the OS task switcher
   ));
 }

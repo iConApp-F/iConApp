@@ -20,9 +20,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e59a29a1-9f43-4c1c-b4fb-c8a481be741b" name="Default Changelist" comment="Implemented hours.dart into homescreen.dart which required both to be modified">
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_SDK.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_SDK.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apsc_100m3_724_f/lib/screens/iConsStaff.dart" beforeDir="false" afterPath="$PROJECT_DIR$/apsc_100m3_724_f/lib/screens/iConsStaff.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apsc_100m3_724_f/android/local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/apsc_100m3_724_f/android/local.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apsc_100m3_724_f/lib/screens/homescreen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/apsc_100m3_724_f/lib/screens/homescreen.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -132,30 +134,30 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="161" y="100" width="1203" height="630" key="AVDManager/0.0.1536.824@0.0.1536.824" timestamp="1615862096622" />
-    <state x="536" y="170" key="FileChooserDialogImpl" timestamp="1615928148291">
+    <state x="536" y="170" key="FileChooserDialogImpl" timestamp="1615930494527">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="536" y="170" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1615928148291" />
-    <state width="1491" height="143" key="GridCell.Tab.0.bottom" timestamp="1615868436518">
+    <state x="536" y="170" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1615930494527" />
+    <state width="1491" height="143" key="GridCell.Tab.0.bottom" timestamp="1615930997213">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1491" height="143" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1615868436518" />
-    <state width="1491" height="143" key="GridCell.Tab.0.center" timestamp="1615868436518">
+    <state width="1491" height="143" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1615930997213" />
+    <state width="1491" height="143" key="GridCell.Tab.0.center" timestamp="1615930997213">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1491" height="143" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1615868436518" />
-    <state width="1491" height="143" key="GridCell.Tab.0.left" timestamp="1615868436518">
+    <state width="1491" height="143" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1615930997213" />
+    <state width="1491" height="143" key="GridCell.Tab.0.left" timestamp="1615930997212">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1491" height="143" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1615868436518" />
-    <state width="1491" height="143" key="GridCell.Tab.0.right" timestamp="1615868436518">
+    <state width="1491" height="143" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1615930997212" />
+    <state width="1491" height="143" key="GridCell.Tab.0.right" timestamp="1615930997213">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1491" height="143" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1615868436518" />
-    <state x="265" y="60" key="SettingsEditor" timestamp="1615928162296">
+    <state width="1491" height="143" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1615930997213" />
+    <state x="265" y="60" key="SettingsEditor" timestamp="1615930495869">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="265" y="60" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1615928162296" />
+    <state x="265" y="60" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1615930495869" />
     <state x="384" y="148" key="Vcs.Push.Dialog.v2" timestamp="1615868145973">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
