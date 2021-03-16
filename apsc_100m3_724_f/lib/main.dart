@@ -19,50 +19,34 @@ void main() {
   ));
 }
 
-class MyAppBar extends StatelessWidget {
-  MyAppBar({this.title});
-
-  // Fields in a Widget subclass are always marked "final".
-
-  final Widget title;
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      height: 56.0, // in logical pixels
-      padding: const EdgeInsets.symmetric(horizontal: 8.0),
-      decoration: BoxDecoration(color: Colors.blue[500]),
-      // Row is a horizontal, linear layout.
-      child: Row(
-        // <Widget> is the type of items in the list.
-        children: <Widget>[
-          IconButton(
-            icon: Icon(Icons.menu),
-            tooltip: 'Navigation menu',
-            onPressed: null, // null disables the button
-          ),
-          // Expanded expands its child to fill the available space.
-          Expanded(
-            child: title,
-          ),
-          IconButton(
-            icon: Icon(Icons.search),
-            tooltip: 'Search',
-            onPressed: null,
-          ),
-        ],
-      ),
-    );
-  }
-}
 
 class MyScaffold extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // Material is a conceptual piece of paper on which the UI appears.
-    return Material(
+    return Scaffold(appBar: AppBar(title: Text('iCons'),
+        actions: <Widget>[IconButton(icon: Image.asset('lib/images/gear.png'), onPressed:(){
+          // or use: context, MaterialPageRoute(builder: (context) => SecondRoute()),
+        })],
+        leading: IconButton(
+          icon: Image.asset('lib/images/app_swirl.png'), onPressed: (){},
+        ),
+        flexibleSpace: Container(
+            decoration: BoxDecoration(
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.grey.withOpacity(0.7),
+                  spreadRadius: 5,
+                  blurRadius: 5,
+                  offset: Offset(0, 3), // changes position of shadow
+                ),
+              ],
+              gradient: LinearGradient(
+                  begin: Alignment.centerLeft,
+                  end: Alignment.centerRight,
+                  colors: [Palette.iBrown, Palette.iGreen, Palette.iBlue]),))),
       // Column is a vertical, linear layout.
-      child: Column(
+      body: Column(
         children: <Widget>[
           /*
           * TODO: Make consistent with rest of group
@@ -70,12 +54,7 @@ class MyScaffold extends StatelessWidget {
           * TODO: Change print statements to code that will go to the correct widget.
           * TODO: Resize hours bar on the bottom. I need to figure out a way to do this in flutter.
           * */
-          MyAppBar(
-            title: Text(
-              'App Bar',
-              style: Theme.of(context).primaryTextTheme.headline6,
-            ),
-          ),
+
           GridView.count(
             primary: false,
             padding: const EdgeInsets.all(10),
