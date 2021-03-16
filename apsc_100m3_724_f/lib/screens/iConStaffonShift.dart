@@ -85,7 +85,7 @@ class iConOnShiftTwoPage extends StatelessWidget{
   Widget build (BuildContext context){
     return new Scaffold(
       appBar: new AppBar(
-        title: new Text(OnShiftnames[n]),
+        title: new Text(OnShiftnames[k]),
       ),
       //run the code that sets up what the page looks like
       body: IndividualOnShiftBodyWidget(),
@@ -103,9 +103,9 @@ class IndividualOnShiftBodyWidget extends StatelessWidget{
           Image.asset('assets/images/Person.jpg', width: 250, height: 250),
           SizedBox(height: 20),
           //add name
-          Text(OnShiftnames[n], style: TextStyle(fontSize: 20), textAlign: TextAlign.center),
+          Text(OnShiftnames[k], style: TextStyle(fontSize: 20), textAlign: TextAlign.center),
           //add program
-          Text(OnShiftprogram[n], style: TextStyle(fontSize: 20), textAlign: TextAlign.center),
+          Text(OnShiftprogram[k], style: TextStyle(fontSize: 20), textAlign: TextAlign.center),
           SizedBox(height: 10),
           Text('"Short biography.........."', style: TextStyle(fontSize: 15, fontStyle: FontStyle.italic), textAlign: TextAlign.center)
         ]
