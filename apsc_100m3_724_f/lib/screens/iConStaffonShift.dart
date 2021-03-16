@@ -51,7 +51,7 @@ class onShiftBodyWidget extends StatelessWidget{
                 (index) => new ListTile(
                   //have their image
                     leading: CircleAvatar(
-                      child: Image.asset('assets/images/Person.jpg', width: 250, height: 250),
+                      //child: Image.asset('assets/images/Person.jpg', width: 250, height: 250),
                       radius: imagesize,
                     ),
                     //add the name of the iCon
@@ -100,7 +100,7 @@ class IndividualOnShiftBodyWidget extends StatelessWidget{
           //add spacing between top of screen and image
           SizedBox(height: 30),
           //set image of icon
-          Image.asset('assets/images/Person.jpg', width: 250, height: 250),
+          //Image.asset('assets/images/Person.jpg', width: 250, height: 250),
           SizedBox(height: 20),
           //add name
           Text(OnShiftnames[k], style: TextStyle(fontSize: 20), textAlign: TextAlign.center),

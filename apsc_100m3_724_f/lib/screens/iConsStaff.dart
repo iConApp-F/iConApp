@@ -42,42 +42,45 @@ var imagesize = 40.0;
 class Staff extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
-    //make a list view
-     return new ListView(
-        padding: const EdgeInsets.all(8),
-        //used to create the widgets of each staff member
-         children: new List.generate(
-           //make a widget for each name
-          names.length,
-              (index) => new ListTile(
-                //add an image for each icon
-                  leading: CircleAvatar(
-                  child: Image.asset('assets/images/Person.jpg', width: 250, height: 250),
-                  radius: imagesize,
-                ),
-                //add the name of the iCon
-                title: Text(names[index], style: TextStyle(fontSize: namefontsize)),
-                //add their program
-                subtitle: Text(program[index]),
-                  trailing: SizedBox.fromSize(
-                      size: Size(90, 48),
-                      //add the button
-                      child: ClipRect(
-                          child: ElevatedButton(
-                           child: Text('MORE'),
-                              //when the button is clicked, set the index value to c and go to teh icon two page
-                              onPressed: () {
-                             c = num[index];
-                                Navigator.push(
-                                  context,
-                                  new MaterialPageRoute(builder: (context) => new iConTwoPage()),
-                                );
-                              }
-                          )
-                      )
-              )
+    Hero(
+      child: Scaffold(
+        body: ListView(
+            padding: const EdgeInsets.all(8),
+            //used to create the widgets of each staff member
+            children: new List.generate(
+              //make a widget for each name
+                names.length,
+                    (index) => new ListTile(
+                  //add an image for each icon
+                    leading: CircleAvatar(
+                      //child: Image.asset('assets/images/Person.jpg', width: 250, height: 250),
+                      radius: imagesize,
+                    ),
+                    //add the name of the iCon
+                    title: Text(names[index], style: TextStyle(fontSize: namefontsize)),
+                    //add their program
+                    subtitle: Text(program[index]),
+                    trailing: SizedBox.fromSize(
+                        size: Size(90, 48),
+                        //add the button
+                        child: ClipRect(
+                            child: ElevatedButton(
+                                child: Text('MORE'),
+                                //when the button is clicked, set the index value to c and go to teh icon two page
+                                onPressed: () {
+                                  c = num[index];
+                                  Navigator.push(
+                                    context,
+                                    new MaterialPageRoute(builder: (context) => new iConTwoPage()),
+                                  );
+                                }
+                            )
+                        )
+                    )
+                )
+            )
         )
-        )
+      )
     );
   }
 }
@@ -102,7 +105,7 @@ class IndividualBodyWidget extends StatelessWidget{
         //add spacing between top of screen and image
         SizedBox(height: 30),
         //add image
-        Image.asset('assets/images/Person.jpg', width: 250, height: 250),
+       // Image.asset('assets/images/Person.jpg', width: 250, height: 250),
         SizedBox(height: 20),
         //add name of icon clicked
         Text(names[c], style: TextStyle(fontSize: 20), textAlign: TextAlign.center),
