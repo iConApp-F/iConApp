@@ -94,7 +94,7 @@ class IconsListViewWidget extends State<IconsListView> {
               .map((data) => ListTile(
                     //listOfItems is displaced as a list
                     title: Text(
-                      data.Name + ": " + data.available + "/" + data.total;
+                      data.Name + ": " + data.available + "/" + data.total
                       ),
                     trailing: Icon(isSaved(data)
                         ? Icons.check
