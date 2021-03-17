@@ -1,16 +1,12 @@
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(MyApp());
-}
-
 class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp( color: Colors.white,
       title: 'Settings',
-      home: Scaffold(
+      home: Scaffold( backgroundColor: Colors.white,
 
           body: Container(
             margin: EdgeInsets.all(24.0),
@@ -233,55 +229,24 @@ class Square8 extends StatelessWidget {
   }
 }
 
-
 class Demo extends StatelessWidget{
   build(context){
-    return Container(
-        height: MediaQuery.of(context).size.height,
-        width: MediaQuery.of(context).size.width,
-        child: Stack(
-          children: [
-            Positioned(
-                top:86,
-                child:Square1()
-            ),
-            Positioned(
-              top:86,
-              left:129,
-              child: Square2(),
-            ),
-            Positioned(
-              child: Square3(),
-              top: 86,
-              right: 0,
-            ),
-            Positioned(
-              child: Square4(sqwidth: 170.0 ),
-              top: 225,
-            ),
-            Positioned(
-              child: Square5(sqwidth: 170.0),
-              top: 225,
-              right: 0,
-            ),
-            Positioned(
-              child: Square6(sqwidth: 170.0),
-              top: 368,
-              left: 0,
-            ),
-            Positioned(
-              child: Square7(sqwidth: 170.0),
-              top: 368,
-              right: 0,
-            ),
-            Positioned(
-              child: Square8(sqwidth: 300.0, sqheight: 60.0),
-              top: 511,
-              right: 32.5,
-            ),
-
-          ],
-        )
-    );
+   return Scaffold(body:
+     GridView.count(
+        primary: false,
+        padding: const EdgeInsets.all(20),
+    crossAxisSpacing: 10,
+    mainAxisSpacing: 10,
+    crossAxisCount: 2,
+    children: <Widget>[
+    Container(child: Square1()),
+      Container(child: Square2()),
+      Container(child: Square3()),
+      Container(child: Square4()),
+      Container(child: Square5()),
+      Container(child: Square6()),
+      Container(child: Square7()),
+      Container(child: Square8()),
+       ]));
   }
 }
