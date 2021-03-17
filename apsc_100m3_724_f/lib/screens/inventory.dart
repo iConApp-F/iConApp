@@ -82,42 +82,42 @@ class IconsListViewWidget extends State<IconsListView> {
    */
   @override
   Widget build(BuildContext context) {
-    return FutureBuilder<List<InventoryData>>(
-      future: fetchItems(),
-      builder: (context, snapshot) {
-        if (!snapshot.hasData)
-          return Center(
-              child:
+    return Scaffold(
+        body: FutureBuilder<List<InventoryData>>(
+          future: fetchItems(),
+          builder: (context, snapshot) {
+            if (!snapshot.hasData)
+              return Center(
+                  child:
                   CircularProgressIndicator()); //This one is neat. It's a progress indicator; so if there's no connection, it will go on and on
-        return ListView(
-          children: snapshot.data
-              .map((data) => ListTile(
-                    //listOfItems is displaced as a list
-                    title: Text(
-                      data.Name + ": " + data.available + "/" + data.total
-                      ),
-                    trailing: Icon(isSaved(data)
-                        ? Icons.check
-                        : Icons.add), //just some text and icons.
-                    /**
-                     * Still working onTap thing as well _toBeRented function. 
-                     */
-                    onTap: () {
-                      print(isSaved(data));
-                      setState(() {
-                        if (isSaved(data)) {
-                          _toBeRented.remove(data);
-                          print("deleted");
-                        } else {
-                          _toBeRented.add(data);
-                          print("added");
-                        }
-                      });
-                    },
-                  ))
-              .toList(),
-        );
-      },
-    );
+            return ListView(
+              children: snapshot.data
+                  .map((data) => ListTile(
+                //listOfItems is displaced as a list
+                title: Text(
+                    data.Name + ": " + data.available + "/" + data.total),
+                trailing: Icon(isSaved(data)
+                    ? Icons.check
+                    : Icons.add), //just some text and icons.
+                /**
+                 * Still working onTap thing as well _toBeRented function.
+                 */
+                onTap: () {
+                  print(isSaved(data));
+                  setState(() {
+                    if (isSaved(data)) {
+                      _toBeRented.remove(data);
+                      print("deleted");
+                    } else {
+                      _toBeRented.add(data);
+                      print("added");
+                    }
+                  });
+                },
+              ))
+                  .toList(),
+            );
+          },
+        ));
   }
 }
