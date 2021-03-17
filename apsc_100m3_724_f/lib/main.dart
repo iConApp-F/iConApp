@@ -27,7 +27,8 @@ class MyScaffold extends StatelessWidget {
     // Material is a conceptual piece of paper on which the UI appears.
     //AppBar starts here
     return Scaffold(appBar: AppBar(title: Text('iCons'),
-        actions: <Widget>[IconButton(icon: Image.asset('lib/images/gear.png'), onPressed:(){
+        actions: <Widget>[IconButton(icon: Image.asset('lib/images/gear.png'),
+            onPressed: () {print('Go to Equipment'); Navigator.pushNamed(context, '/settings');
           // or use: context, MaterialPageRoute(builder: (context) => SecondRoute()),
         })],
         leading: IconButton(
