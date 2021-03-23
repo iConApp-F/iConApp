@@ -47,7 +47,7 @@ class Hours extends StatelessWidget {
           body: Center(child: Column(mainAxisAlignment: MainAxisAlignment.start, children: <Widget>[Flexible(fit: FlexFit.loose, child:
             SingleChildScrollView(
               child: Container( padding: EdgeInsets.all(20), child: Row( mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-    children: <Widget>[ Expanded( child: Container(height: 700,
+    children: <Widget>[ Expanded( child: Container(
       padding: EdgeInsets.all(20),
     decoration: BoxDecoration(
         boxShadow: [
