@@ -110,10 +110,7 @@ class IconsListViewWidget extends State<IconsListView> {
       }
     }
 
-    final title = 'gotta love 132 retake';
-
     return MaterialApp(
-      title: title,
       home: Scaffold(
           appBar: AppBar(
             title: Text('wow', style: Theme.of(context).textTheme.headline1),
