@@ -45,16 +45,17 @@ class Hours extends StatelessWidget {
 
       //Beginning of Body with Hours text
           body: Center(child: Column( mainAxisAlignment: MainAxisAlignment.start, children: <Widget>[Expanded( child:
-            Container( padding: EdgeInsets.all(20), child: Row( mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            SingleChildScrollView(
+              child: Container( padding: EdgeInsets.all(20), child: Row( mainAxisAlignment: MainAxisAlignment.spaceEvenly,
     children: <Widget>[ Expanded( child: Container(
       padding: EdgeInsets.all(20),
     decoration: BoxDecoration(
         boxShadow: [
           BoxShadow(
-            color: Colors.grey.withOpacity(0.8),
-            spreadRadius: 5,
-            blurRadius: 7,
-            offset: Offset(0, 3), // changes position of shadow
+              color: Colors.grey.withOpacity(0.8),
+              spreadRadius: 5,
+              blurRadius: 7,
+              offset: Offset(0, 3), // changes position of shadow
           ),
         ],
       gradient: LinearGradient(
@@ -80,7 +81,8 @@ class Hours extends StatelessWidget {
         TextSpan(text: "\n\n5:30 PM - 11:00 PM", style: TextStyle(color: Colors.white, fontSize: 20.0),)
     ]),
     )]))))],
-          ),)
+          ),),
+            )
           )])))
     ;
   }
