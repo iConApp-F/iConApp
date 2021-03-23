@@ -29,7 +29,7 @@ class iConStaffOnShiftScreen extends StatelessWidget{
 }
 //names and programs of the corresponding staff on shift
 //will need to be updated depending on who is working
-var OnShiftnames = ['iCon Staff 1','iCon Staff 3','iCon Staff 5','iCon Staff 6','iCon Staff 5','iCon Staff 6','iCon Staff 7'];
+var OnShiftnames = ['iCon Staff 1','iCon Staff 3','iCon Staff 5','iCon Staff 6','iCon Staff 13','iCon Staff 19','iCon Staff 27'];
 var OnShiftprogram = ['Computer Engineering', 'Mechanical Engineering','Engineering Physics','Civil Engineering','Computer Engineering','Electrical Engineering','Chemical Engineering','Computer Engineering','Mechanical Engineering','Computer Engineering','Electrical Engineering'];
 var OnShiftnum = [0,1,2,3,4,5,6,7,8,9];
 //set as the value of index when button is clicked to tell which name to use in the individual icon screen
