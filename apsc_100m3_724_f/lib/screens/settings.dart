@@ -233,7 +233,7 @@ class Demo extends StatelessWidget{
   build(context){
    return Scaffold(appBar: AppBar(title: Text('iCons'),
        actions: <Widget>[IconButton(icon: Image.asset('lib/images/gear.png'),
-           onPressed: () {print('Go to Equipment');
+           onPressed: () {print('Go to Equipment') ;
              // or use: context, MaterialPageRoute(builder: (context) => SecondRoute()),
            })],
        leading: IconButton(
