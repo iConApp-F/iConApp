@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
+import 'package:provider/provider.dart'; // For updating states
 
 /**
  * To use this file, just import this file as the "inventory.dart";
