@@ -21,7 +21,7 @@ class Hours extends StatelessWidget {
   Widget build(BuildContext context) {
     //beginning of the AppBar
   return Scaffold(appBar: AppBar(title: Text('iCons'),
-            actions: <Widget>[IconButton(icon: Image.asset('lib/images/gear.png'), onPressed:(){
+            actions: <Widget>[IconButton(icon: Image.asset('lib/images/gear.png'), onPressed:(){Navigator.pushNamed(context, '/settings');
               // or use: context, MaterialPageRoute(builder: (context) => SecondRoute()),
             })],
             leading: IconButton(
