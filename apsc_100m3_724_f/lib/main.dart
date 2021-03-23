@@ -60,7 +60,6 @@ class MyScaffold extends StatelessWidget {
             * TODO: Make consistent with rest of group
             * TODO: Add in the various icons, and centre the text + size it correctly to match the wireframe
             * TODO: Change print statements to code that will go to the correct widget.
-            * TODO: Resize hours bar on the bottom. I need to figure out a way to do this in flutter.
             * */
 
             GridView.count(
