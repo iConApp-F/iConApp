@@ -37,6 +37,22 @@ class InventoryData {
   }
 }
 
+class _MyAppBar extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return SliverAppBar(
+      title: Text('Catalog', style: Theme.of(context).textTheme.headline1),
+      floating: true,
+      actions: [
+        IconButton(
+          icon: Icon(Icons.shopping_cart),
+          onPressed: () => Navigator.pushNamed(context, '/cart'),
+        ),
+      ],
+    );
+  }
+}
+
 /**
  * no idea rly
  */
@@ -48,8 +64,9 @@ class IconsListView extends StatefulWidget {
  * main component here is the url as it's our inventory database
  */
 class IconsListViewWidget extends State<IconsListView> {
-  final _toBeRented = Set<
-      InventoryData>(); //still in progress. Hopefully, it will be used to store selected items
+  List<InventoryData> toCatagolize = [];
+  final Set _toBeRented = Set<InventoryData>();
+  //still in progress. Hopefully, it will be used to store selected items
   final String urL =
       'http://flutter-server-app.000webhostapp.com/inventory_list_file.php/';
 
@@ -72,6 +89,7 @@ class IconsListViewWidget extends State<IconsListView> {
       List<InventoryData> listOfItems = items.map<InventoryData>((json) {
         return InventoryData.fromJson(json);
       }).toList();
+      toCatagolize = listOfItems;
       return listOfItems;
     } else {
       throw Exception('Failed to load data.');
@@ -83,42 +101,59 @@ class IconsListViewWidget extends State<IconsListView> {
    */
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        body: FutureBuilder<List<InventoryData>>(
-          future: fetchItems(),
-          builder: (context, snapshot) {
-            if (!snapshot.hasData)
-              return Center(
-                  child:
-                  CircularProgressIndicator()); //This one is neat. It's a progress indicator; so if there's no connection, it will go on and on
-            return ListView(
-              children: snapshot.data
-                  .map((data) => ListTile(
-                //listOfItems is displaced as a list
-                title: Text(
-                    data.Name + ": " + data.available + "/" + data.total),
-                trailing: Icon(isSaved(data)
-                    ? Icons.check
-                    : Icons.add), //just some text and icons.
-                /**
+    bool itemsUploaded = false;
+
+    changeItemBar() {
+      if (!itemsUploaded) {
+        itemsUploaded = true;
+        fetchItems();
+      }
+    }
+
+    final title = 'gotta love 132 retake';
+
+    return MaterialApp(
+      title: title,
+      home: Scaffold(
+          appBar: AppBar(
+            title: Text('wow', style: Theme.of(context).textTheme.headline1),
+            actions: [
+              IconButton(
+                icon: Icon(Icons.shopping_cart),
+                onPressed: () => Navigator.pushNamed(context, '/cart'),
+              ),
+            ],
+          ),
+          body: ListView.builder(
+              itemCount: toCatagolize.length,
+              itemBuilder: (context, index) {
+                return ListTile(
+                  title: Text(toCatagolize[index].Name +
+                      ": " +
+                      toCatagolize[index].available +
+                      "/" +
+                      toCatagolize[index].total),
+                  trailing: Icon(isSaved(toCatagolize[index])
+                      ? Icons.check
+                      : Icons.add), //just some text and icons.
+                  /**
                  * Still working onTap thing as well _toBeRented function.
                  */
-                onTap: () {
-                  print(isSaved(data));
-                  setState(() {
-                    if (isSaved(data)) {
-                      _toBeRented.remove(data);
-                      print("deleted");
-                    } else {
-                      _toBeRented.add(data);
-                      print("added");
-                    }
-                  });
-                },
-              ))
-                  .toList(),
-            );
-          },
-        ));
+                  onTap: () {
+                    print(isSaved(toCatagolize[index]));
+                    setState(() {
+                      if (isSaved(toCatagolize[index])) {
+                        _toBeRented.remove(toCatagolize[index]);
+                        print("deleted");
+                      } else {
+                        _toBeRented.add(toCatagolize[index]);
+                        print("added");
+                      }
+                    });
+                    print(_toBeRented.length);
+                  },
+                );
+              })),
+    );
   }
 }
