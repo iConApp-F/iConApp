@@ -81,8 +81,7 @@ class Hours extends StatelessWidget {
         TextSpan(text: "\n\n5:30 PM - 11:00 PM", style: TextStyle(color: Colors.white, fontSize: 20.0),)
     ]),
     )]))))],
-          ),),
-            )
+          ),),)
           )])))
     ;
   }
