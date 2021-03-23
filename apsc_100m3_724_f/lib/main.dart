@@ -3,6 +3,7 @@ import 'screens/hours.dart';
 import 'screens/iConsStaff.dart';
 import 'screens/settings.dart';
 import 'screens/inventory.dart';
+import 'screens/iConStaffonShift.dart';
 
 
 void main() {
@@ -14,6 +15,7 @@ void main() {
       '/': (context) => MyScaffold(),
       '/hours': (context) => Hours(),
       '/staff': (context) => Staff(),
+      '/shift': (context) => onShiftBodyWidget(),
       '/settings': (context) => Demo(),
       '/inventory': (context) => IconsListView(),
     },// used by the OS task switcher
@@ -86,7 +88,7 @@ class MyScaffold extends StatelessWidget {
                 label: Text('Help'),
                 icon: Icon(Icons.help),
                 onPressed: () {
-                  print('Go to Help'); Navigator.pushNamed(context, '/staff');
+                  print('Go to Help'); Navigator.pushNamed(context, '/shift');
                 },
               ),
               OutlinedButton.icon(

@@ -43,7 +43,7 @@ class onShiftBodyWidget extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     //make a list view
-    return new ListView(
+    return new Scaffold(body: ListView(
         padding: const EdgeInsets.all(8),
         //generate the list of the iCons on shift
         children: new List.generate(
@@ -77,7 +77,7 @@ class onShiftBodyWidget extends StatelessWidget{
                   )
             )
         )
-    );
+    ));
   }
 }
 class iConOnShiftTwoPage extends StatelessWidget{
