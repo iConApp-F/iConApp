@@ -222,6 +222,10 @@ class Square8 extends StatelessWidget {
           icon: Icon(Icons.description_outlined),
           label: Text(("Credits")),
           onPressed: (){
+            Navigator.push(
+              context,
+              new MaterialPageRoute(builder: (context) => new CreditPage()),
+                );
             print('Credits');
           }
       ),
@@ -267,5 +271,25 @@ class Demo extends StatelessWidget{
       Container(child: Square7()),
       Container(child: Square8()),
        ]));
+  }
+}
+
+class CreditPage extends StatelessWidget{
+  @override
+  Widget build (BuildContext){
+    return new Scaffold(
+      body: IndividualTextWidget(),
+    );
+  }
+}
+
+class IndividualTextWidget extends StatelessWidget{
+  @override
+  Widget build (BuildContext context){
+    return ListView(
+        children: <Widget>[
+          Text('"This is the credits section"', style: TextStyle(fontSize: 15, fontStyle: FontStyle.italic), textAlign: TextAlign.center)
+        ]
+    );
   }
 }
