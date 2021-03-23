@@ -78,7 +78,7 @@ class Hours extends StatelessWidget {
         TextSpan(text: "\n\n11:30 AM - 11:00 PM", style: TextStyle(color: Colors.white, fontSize: 20.0),),
         TextSpan(text: "\n\n\n\nStirling Hall", style: TextStyle(color: Colors.white, fontSize: 25.0, fontWeight: FontWeight.bold),),
         TextSpan(text: "\n\nMonday to Thursday", style: TextStyle(color: Colors.white, fontSize: 25.0),),
-        TextSpan(text: "\n\n5:30 PM - 11:00 PM", style: TextStyle(color: Colors.white, fontSize: 20.0),)
+        TextSpan(text: "\n\n5:30 PM - 11:00 PM\n\n", style: TextStyle(color: Colors.white, fontSize: 20.0),)
     ]),
     )]))))],
           ),),)

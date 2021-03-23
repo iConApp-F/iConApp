@@ -80,7 +80,7 @@ class MyScaffold extends StatelessWidget {
                           end: Alignment.topCenter,
                           colors: [Palette.iBrown, Palette.iBlue])),
                   child: OutlinedButton.icon(
-                    label: Text('Rooms', style: TextStyle(color: Colors.white)),
+                    label: Text('Rooms', style: TextStyle(color: Colors.white, fontSize: 20)),
                     icon: Icon(Icons.room, color: Colors.white,),
                     onPressed: () {
                       print('Go to Rooms');
@@ -95,7 +95,7 @@ class MyScaffold extends StatelessWidget {
                           end: Alignment.topCenter,
                           colors: [Palette.iBrown, Palette.iBlue])),
                   child: OutlinedButton.icon(
-                    label: Text('Equipment', style: TextStyle(color: Colors.white)),
+                    label: Text('Equipment', style: TextStyle(color: Colors.white, fontSize: 20)),
                     icon: Icon(Icons.bolt, color: Colors.white,),
                     onPressed: () {
                       print('Go to Equipment'); Navigator.pushNamed(context, '/inventory');
@@ -110,7 +110,7 @@ class MyScaffold extends StatelessWidget {
                           end: Alignment.topCenter,
                           colors: [Palette.iBrown, Palette.iBlue])),
                   child: OutlinedButton.icon(
-                    label: Text('Help', style: TextStyle(color: Colors.white)),
+                    label: Text('Help', style: TextStyle(color: Colors.white, fontSize: 20)),
                     icon: Icon(Icons.help, color: Colors.white,),
                     onPressed: () {
                       print('Go to Help'); Navigator.pushNamed(context, '/shift');
@@ -125,7 +125,7 @@ class MyScaffold extends StatelessWidget {
                           end: Alignment.topCenter,
                           colors: [Palette.iBrown, Palette.iBlue])),
                   child: OutlinedButton.icon(
-                    label: Text('The Team', style: TextStyle(color: Colors.white)),
+                    label: Text('The Team', style: TextStyle(color: Colors.white, fontSize: 20)),
                     icon: Icon(Icons.people, color: Colors.white,),
                     onPressed: () {
                       print('Go to The Team'); Navigator.pushNamed(context, '/staff');
@@ -145,7 +145,7 @@ class MyScaffold extends StatelessWidget {
                           end: Alignment.topCenter,
                           colors: [Palette.iBrown, Palette.iBlue])),
                     child: OutlinedButton.icon(
-                      label: Text('Hours', style: TextStyle(color: Colors.white)),
+                      label: Text('Hours', style: TextStyle(color: Colors.white, fontSize: 20)),
                       icon: Icon(Icons.schedule, color: Colors.white,),
                       onPressed: () {
                         print('Go to Hours'); Navigator.pushNamed(context, '/hours');
