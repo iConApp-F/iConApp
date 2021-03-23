@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'screens/hours.dart';
 import 'screens/iConsStaff.dart';
 import 'screens/settings.dart';
-import 'screens/inventory.dart';
+//import 'screens/inventory.dart';
 import 'screens/iConStaffonShift.dart';
 
 
@@ -17,7 +17,7 @@ void main() {
       '/staff': (context) => Staff(),
       '/shift': (context) => onShiftBodyWidget(),
       '/settings': (context) => Demo(),
-      '/inventory': (context) => IconsListView(),
+      //'/inventory': (context) => IconsListView(),
     },// used by the OS task switcher
   ));
 }
