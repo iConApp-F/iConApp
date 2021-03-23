@@ -232,10 +232,7 @@ class Square8 extends StatelessWidget {
 class Demo extends StatelessWidget{
   build(context){
    return Scaffold(appBar: AppBar(title: Text('iCons'),
-       actions: <Widget>[IconButton(icon: Image.asset('lib/images/gear.png'),
-           onPressed: () {print('Go to Equipment') ;
              // or use: context, MaterialPageRoute(builder: (context) => SecondRoute()),
-           })],
        leading: IconButton(
          icon: Image.asset('lib/images/app_swirl.png'), onPressed: (){},
        ),

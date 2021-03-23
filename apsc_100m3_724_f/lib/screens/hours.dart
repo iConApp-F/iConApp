@@ -44,7 +44,7 @@ class Hours extends StatelessWidget {
           //END of AppBar
 
       //Beginning of Body with Hours text
-          body: Center(child: Column( mainAxisAlignment: MainAxisAlignment.start, children: <Widget>[Expanded( child:
+          body: Center(child: Column( mainAxisAlignment: MainAxisAlignment.start, children: <Widget>[Flexible( child:
             SingleChildScrollView(
               child: Container( padding: EdgeInsets.all(20), child: Row( mainAxisAlignment: MainAxisAlignment.spaceEvenly,
     children: <Widget>[ Expanded( child: Container(
