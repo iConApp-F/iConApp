@@ -52,69 +52,72 @@ class MyScaffold extends StatelessWidget {
                   colors: [Palette.iBrown, Palette.iGreen, Palette.iBlue]),))),
       //END of AppBar
       // Column is a vertical, linear layout.
-      body: Column(
-        children: <Widget>[
-          /*
-          * TODO: Make consistent with rest of group
-          * TODO: Add in the various icons, and centre the text + size it correctly to match the wireframe
-          * TODO: Change print statements to code that will go to the correct widget.
-          * TODO: Resize hours bar on the bottom. I need to figure out a way to do this in flutter.
-          * */
 
-          GridView.count(
-            primary: false,
-            padding: const EdgeInsets.all(10),
-            crossAxisSpacing: 10,
-            mainAxisSpacing: 10,
-            crossAxisCount: 2,
-            scrollDirection: Axis.vertical,
-            shrinkWrap: true,
-            children: <Widget>[
-              OutlinedButton.icon(
-                label: Text('Rooms'),
-                icon: Icon(Icons.room),
-                onPressed: () {
-                  print('Go to Rooms');
-                },
-              ),
-              OutlinedButton.icon(
-                label: Text('Equipment'),
-                icon: Icon(Icons.bolt),
-                onPressed: () {
-                  print('Go to Equipment'); Navigator.pushNamed(context, '/inventory');
-                },
-              ),
-              OutlinedButton.icon(
-                label: Text('Help'),
-                icon: Icon(Icons.help),
-                onPressed: () {
-                  print('Go to Help'); Navigator.pushNamed(context, '/shift');
-                },
-              ),
-              OutlinedButton.icon(
-                label: Text('The Team'),
-                icon: Icon(Icons.people),
-                onPressed: () {
-                  print('Go to The Team'); Navigator.pushNamed(context, '/staff');
-                },
-              ),
-            ],
-          ),
-          Row(
-            children: <Widget>[
-              Expanded(
-                child:
+      body: SingleChildScrollView(
+        child: Column(
+          children: <Widget>[
+            /*
+            * TODO: Make consistent with rest of group
+            * TODO: Add in the various icons, and centre the text + size it correctly to match the wireframe
+            * TODO: Change print statements to code that will go to the correct widget.
+            * TODO: Resize hours bar on the bottom. I need to figure out a way to do this in flutter.
+            * */
+
+            GridView.count(
+              primary: false,
+              padding: const EdgeInsets.all(10),
+              crossAxisSpacing: 10,
+              mainAxisSpacing: 10,
+              crossAxisCount: 2,
+              scrollDirection: Axis.vertical,
+              shrinkWrap: true,
+              children: <Widget>[
                 OutlinedButton.icon(
-                  label: Text('Hours'),
-                  icon: Icon(Icons.date_range),
+                  label: Text('Rooms'),
+                  icon: Icon(Icons.room),
                   onPressed: () {
-                    print('Go to Hours'); Navigator.pushNamed(context, '/hours');
+                    print('Go to Rooms');
                   },
                 ),
-              ),
-            ],
-          ),
-        ],
+                OutlinedButton.icon(
+                  label: Text('Equipment'),
+                  icon: Icon(Icons.bolt),
+                  onPressed: () {
+                    print('Go to Equipment'); Navigator.pushNamed(context, '/inventory');
+                  },
+                ),
+                OutlinedButton.icon(
+                  label: Text('Help'),
+                  icon: Icon(Icons.help),
+                  onPressed: () {
+                    print('Go to Help'); Navigator.pushNamed(context, '/shift');
+                  },
+                ),
+                OutlinedButton.icon(
+                  label: Text('The Team'),
+                  icon: Icon(Icons.people),
+                  onPressed: () {
+                    print('Go to The Team'); Navigator.pushNamed(context, '/staff');
+                  },
+                ),
+              ],
+            ),
+            Row(
+              children: <Widget>[
+                Expanded(
+                  child:
+                  OutlinedButton.icon(
+                    label: Text('Hours'),
+                    icon: Icon(Icons.date_range),
+                    onPressed: () {
+                      print('Go to Hours'); Navigator.pushNamed(context, '/hours');
+                    },
+                  ),
+                ),
+              ],
+            ),
+          ],
+        ),
       ),
     );
   }
