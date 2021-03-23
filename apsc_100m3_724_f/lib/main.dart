@@ -28,7 +28,7 @@ class MyScaffold extends StatelessWidget {
   Widget build(BuildContext context) {
     // Material is a conceptual piece of paper on which the UI appears.
     //AppBar starts here
-    return Scaffold(appBar: AppBar(title: Text('iCons'),
+    return Scaffold(backgroundColor: Colors.white, appBar: AppBar(title: Text('iCons'),
         actions: <Widget>[IconButton(icon: Image.asset('lib/images/gear.png'),
             onPressed: () {print('Go to Equipment'); Navigator.pushNamed(context, '/settings');
           // or use: context, MaterialPageRoute(builder: (context) => SecondRoute()),
@@ -72,33 +72,65 @@ class MyScaffold extends StatelessWidget {
               scrollDirection: Axis.vertical,
               shrinkWrap: true,
               children: <Widget>[
-                OutlinedButton.icon(
-                  label: Text('Rooms'),
-                  icon: Icon(Icons.room),
-                  onPressed: () {
-                    print('Go to Rooms');
-                  },
+                Container(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.all(Radius.circular(20)),
+                      gradient: LinearGradient(
+                          begin: Alignment.bottomCenter,
+                          end: Alignment.topCenter,
+                          colors: [Palette.iBrown, Palette.iBlue])),
+                  child: OutlinedButton.icon(
+                    label: Text('Rooms', style: TextStyle(color: Colors.white)),
+                    icon: Icon(Icons.room, color: Colors.white,),
+                    onPressed: () {
+                      print('Go to Rooms');
+                    },
+                  ),
                 ),
-                OutlinedButton.icon(
-                  label: Text('Equipment'),
-                  icon: Icon(Icons.bolt),
-                  onPressed: () {
-                    print('Go to Equipment'); Navigator.pushNamed(context, '/inventory');
-                  },
+                Container(
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.all(Radius.circular(20)),
+                      gradient: LinearGradient(
+                          begin: Alignment.bottomCenter,
+                          end: Alignment.topCenter,
+                          colors: [Palette.iBrown, Palette.iBlue])),
+                  child: OutlinedButton.icon(
+                    label: Text('Equipment', style: TextStyle(color: Colors.white)),
+                    icon: Icon(Icons.bolt, color: Colors.white,),
+                    onPressed: () {
+                      print('Go to Equipment'); Navigator.pushNamed(context, '/inventory');
+                    },
+                  ),
                 ),
-                OutlinedButton.icon(
-                  label: Text('Help'),
-                  icon: Icon(Icons.help),
-                  onPressed: () {
-                    print('Go to Help'); Navigator.pushNamed(context, '/shift');
-                  },
+                Container(
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.all(Radius.circular(20)),
+                      gradient: LinearGradient(
+                          begin: Alignment.bottomCenter,
+                          end: Alignment.topCenter,
+                          colors: [Palette.iBrown, Palette.iBlue])),
+                  child: OutlinedButton.icon(
+                    label: Text('Help', style: TextStyle(color: Colors.white)),
+                    icon: Icon(Icons.help, color: Colors.white,),
+                    onPressed: () {
+                      print('Go to Help'); Navigator.pushNamed(context, '/shift');
+                    },
+                  ),
                 ),
-                OutlinedButton.icon(
-                  label: Text('The Team'),
-                  icon: Icon(Icons.people),
-                  onPressed: () {
-                    print('Go to The Team'); Navigator.pushNamed(context, '/staff');
-                  },
+                Container(
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.all(Radius.circular(20)),
+                      gradient: LinearGradient(
+                          begin: Alignment.bottomCenter,
+                          end: Alignment.topCenter,
+                          colors: [Palette.iBrown, Palette.iBlue])),
+                  child: OutlinedButton.icon(
+                    label: Text('The Team', style: TextStyle(color: Colors.white)),
+                    icon: Icon(Icons.people, color: Colors.white,),
+                    onPressed: () {
+                      print('Go to The Team'); Navigator.pushNamed(context, '/staff');
+                    },
+                  ),
                 ),
               ],
             ),
@@ -106,12 +138,19 @@ class MyScaffold extends StatelessWidget {
               children: <Widget>[
                 Expanded(
                   child:
-                  OutlinedButton.icon(
-                    label: Text('Hours'),
-                    icon: Icon(Icons.date_range),
-                    onPressed: () {
-                      print('Go to Hours'); Navigator.pushNamed(context, '/hours');
-                    },
+                  Container(height: 60, decoration: BoxDecoration(
+                      borderRadius: BorderRadius.all(Radius.circular(20)),
+                      gradient: LinearGradient(
+                          begin: Alignment.bottomCenter,
+                          end: Alignment.topCenter,
+                          colors: [Palette.iBrown, Palette.iBlue])),
+                    child: OutlinedButton.icon(
+                      label: Text('Hours', style: TextStyle(color: Colors.white)),
+                      icon: Icon(Icons.schedule, color: Colors.white,),
+                      onPressed: () {
+                        print('Go to Hours'); Navigator.pushNamed(context, '/hours');
+                      },
+                    ),
                   ),
                 ),
               ],
