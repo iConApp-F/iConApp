@@ -4,6 +4,7 @@ import 'fetchDatabase.dart'; // For updating states
 import 'MyGlobals.dart' as gl;
 import 'package:badges/badges.dart';
 import 'Cart.dart';
+import 'AddBadge.dart';
 
 /**
  * To use this file, just import this file as the "inventory.dart";
@@ -49,6 +50,11 @@ class IconsListViewWidget extends State<IconsListView> {
             title: Text('iCons Inventory',
                 style: Theme.of(context).textTheme.headline3),
             actions: [
+              AddBadge(
+                  top: 8,
+                  right: 8,
+                  value: gl.MyGlobals.toBeRented.length,
+                  child:
               IconButton(
                   icon: Icon(Icons.shopping_cart),
                   onPressed: () {
@@ -57,8 +63,10 @@ class IconsListViewWidget extends State<IconsListView> {
                       MaterialPageRoute(builder: (context) => CartView()),
                     );
                   }),
-            ],
+            ),
+          ],
           ),
+
           body: ListView.builder(
               itemCount: inventoryList.length,
               itemBuilder: (context, index) {
