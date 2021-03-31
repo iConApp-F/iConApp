@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
-import 'package:provider/provider.dart'; // For updating states
+import 'package:provider/provider.dart';
+import 'fetchDatabase.dart'; // For updating states
+import 'MyGlobals.dart' as gl;
 
 /**
  * To use this file, just import this file as the "inventory.dart";
@@ -12,30 +14,6 @@ import 'package:provider/provider.dart'; // For updating states
 /**
  * Creating an object for each inventory item. IDs are set automatically by the database.
  */
-class InventoryData {
-  String id;
-  String Name;
-  String available;
-  String total;
-
-  InventoryData({
-    this.id,
-    this.Name,
-    this.available,
-    this.total,
-  });
-
-  /**
-   * reads json table of the inventory and creates an inventory object
-   */
-  factory InventoryData.fromJson(Map<String, dynamic> json) {
-    return InventoryData(
-        id: json['id'],
-        Name: json['inventory_name'],
-        available: json['inventory_available'],
-        total: json['inventory_total']);
-  }
-}
 
 class _MyAppBar extends StatelessWidget {
   @override
@@ -64,11 +42,7 @@ class IconsListView extends StatefulWidget {
  * main component here is the url as it's our inventory database
  */
 class IconsListViewWidget extends State<IconsListView> {
-  List<InventoryData> toCatagolize = [];
   final Set _toBeRented = Set<InventoryData>();
-  //still in progress. Hopefully, it will be used to store selected items
-  final String urL =
-      'http://flutter-server-app.000webhostapp.com/inventory_list_file.php/';
 
   /**
    * checking if the clicked item is in the _toBeRented set
@@ -80,36 +54,13 @@ class IconsListViewWidget extends State<IconsListView> {
   /**
    * this one fetches data from the database website, makes objects out of the them and puts them in the list "listOfItems"
    */
-  Future<List<InventoryData>> fetchItems() async {
-    var response = await http.get(urL);
-
-    if (response.statusCode == 200) {
-      final items = json.decode(response.body).cast<Map<String, dynamic>>();
-
-      List<InventoryData> listOfItems = items.map<InventoryData>((json) {
-        return InventoryData.fromJson(json);
-      }).toList();
-      toCatagolize = listOfItems;
-      return listOfItems;
-    } else {
-      throw Exception('Failed to load data.');
-    }
-  }
 
   /**
    * Main part. Still not sure what is the snapshot... oh well. This widget just displays the listOfItems as a list of clickable items.
    */
   @override
   Widget build(BuildContext context) {
-    bool itemsUploaded = false;
-
-    changeItemBar() {
-      if (!itemsUploaded) {
-        itemsUploaded = true;
-        fetchItems();
-      }
-    }
-
+    List inventoryList = gl.MyGlobals.inventoryList;
     return MaterialApp(
       home: Scaffold(
           appBar: AppBar(
@@ -122,28 +73,28 @@ class IconsListViewWidget extends State<IconsListView> {
             ],
           ),
           body: ListView.builder(
-              itemCount: toCatagolize.length,
+              itemCount: inventoryList.length,
               itemBuilder: (context, index) {
                 return ListTile(
-                  title: Text(toCatagolize[index].Name +
+                  title: Text(inventoryList[index].Name +
                       ": " +
-                      toCatagolize[index].available +
+                      inventoryList[index].available +
                       "/" +
-                      toCatagolize[index].total),
-                  trailing: Icon(isSaved(toCatagolize[index])
+                      inventoryList[index].total),
+                  trailing: Icon(isSaved(inventoryList[index])
                       ? Icons.check
                       : Icons.add), //just some text and icons.
                   /**
                  * Still working onTap thing as well _toBeRented function.
                  */
                   onTap: () {
-                    print(isSaved(toCatagolize[index]));
+                    print(isSaved(inventoryList[index]));
                     setState(() {
-                      if (isSaved(toCatagolize[index])) {
-                        _toBeRented.remove(toCatagolize[index]);
+                      if (isSaved(inventoryList[index])) {
+                        _toBeRented.remove(inventoryList[index]);
                         print("deleted");
                       } else {
-                        _toBeRented.add(toCatagolize[index]);
+                        _toBeRented.add(inventoryList[index]);
                         print("added");
                       }
                     });
