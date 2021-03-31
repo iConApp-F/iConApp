@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'hours.dart';
 
 void main() {
   runApp(MyApp());
@@ -28,7 +29,7 @@ class iConStaffOnShiftScreen extends StatelessWidget{
 }
 //names and programs of the corresponding staff on shift
 //will need to be updated depending on who is working
-var OnShiftnames = ['iCon Staff 1','iCon Staff 3','iCon Staff 5','iCon Staff 6','iCon Staff 5','iCon Staff 6','iCon Staff 7'];
+var OnShiftnames = ['iCon Staff 1','iCon Staff 3','iCon Staff 5','iCon Staff 6','iCon Staff 13','iCon Staff 19','iCon Staff 27'];
 var OnShiftprogram = ['Computer Engineering', 'Mechanical Engineering','Engineering Physics','Civil Engineering','Computer Engineering','Electrical Engineering','Chemical Engineering','Computer Engineering','Mechanical Engineering','Computer Engineering','Electrical Engineering'];
 var OnShiftnum = [0,1,2,3,4,5,6,7,8,9];
 //set as the value of index when button is clicked to tell which name to use in the individual icon screen
@@ -43,7 +44,30 @@ class onShiftBodyWidget extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     //make a list view
-    return new Scaffold(body: ListView(
+    return new Scaffold(appBar: AppBar(title: Text('iCons'),
+        actions: <Widget>[IconButton(icon: Image.asset('lib/images/gear.png'),
+            onPressed: () {print('Go to Equipment'); Navigator.pushNamed(context, '/settings');
+              // or use: context, MaterialPageRoute(builder: (context) => SecondRoute()),
+            })],
+        leading: IconButton(
+          icon: Image.asset('lib/images/app_swirl.png'), onPressed: (){},
+        ),
+        flexibleSpace: Container(
+            decoration: BoxDecoration(
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.grey.withOpacity(0.7),
+                  spreadRadius: 5,
+                  blurRadius: 5,
+                  offset: Offset(0, 3), // changes position of shadow
+                ),
+              ],
+              gradient: LinearGradient(
+                  begin: Alignment.centerLeft,
+                  end: Alignment.centerRight,
+                  colors: [Palette.iBrown, Palette.iGreen, Palette.iBlue]),))),
+
+        body: ListView(
         padding: const EdgeInsets.all(8),
         //generate the list of the iCons on shift
         children: new List.generate(
@@ -84,9 +108,28 @@ class iConOnShiftTwoPage extends StatelessWidget{
   @override
   Widget build (BuildContext context){
     return new Scaffold(
-      appBar: new AppBar(
-        title: new Text(OnShiftnames[k]),
-      ),
+      appBar: AppBar(title: Text('iCons'),
+          actions: <Widget>[IconButton(icon: Image.asset('lib/images/gear.png'), onPressed:(){Navigator.pushNamed(context, '/settings');
+            // or use: context, MaterialPageRoute(builder: (context) => SecondRoute()),
+          })],
+          leading: IconButton(
+            icon: Image.asset('lib/images/app_swirl.png'), onPressed: (){},
+          ),
+          flexibleSpace: Container(
+              decoration: BoxDecoration(
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.grey.withOpacity(0.7),
+                    spreadRadius: 5,
+                    blurRadius: 5,
+                    offset: Offset(0, 3), // changes position of shadow
+                  ),
+                ],
+                gradient: LinearGradient(
+                    begin: Alignment.centerLeft,
+                    end: Alignment.centerRight,
+                    colors: [Palette.iBrown, Palette.iGreen, Palette.iBlue]),))),
+      //END of AppBar
       //run the code that sets up what the page looks like
       body: IndividualOnShiftBodyWidget(),
     );

@@ -21,7 +21,7 @@ class Hours extends StatelessWidget {
   Widget build(BuildContext context) {
     //beginning of the AppBar
   return Scaffold(appBar: AppBar(title: Text('iCons'),
-            actions: <Widget>[IconButton(icon: Image.asset('lib/images/gear.png'), onPressed:(){
+            actions: <Widget>[IconButton(icon: Image.asset('lib/images/gear.png'), onPressed:(){Navigator.pushNamed(context, '/settings');
               // or use: context, MaterialPageRoute(builder: (context) => SecondRoute()),
             })],
             leading: IconButton(
@@ -44,17 +44,18 @@ class Hours extends StatelessWidget {
           //END of AppBar
 
       //Beginning of Body with Hours text
-          body: Center(child: Column( mainAxisAlignment: MainAxisAlignment.start, children: <Widget>[Expanded( child:
-            Container( padding: EdgeInsets.all(20), child: Row( mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          body: Center(child: Column(mainAxisAlignment: MainAxisAlignment.start, children: <Widget>[Flexible(fit: FlexFit.loose, child:
+            SingleChildScrollView(
+              child: Container( padding: EdgeInsets.all(20), child: Row( mainAxisAlignment: MainAxisAlignment.spaceEvenly,
     children: <Widget>[ Expanded( child: Container(
       padding: EdgeInsets.all(20),
     decoration: BoxDecoration(
         boxShadow: [
           BoxShadow(
-            color: Colors.grey.withOpacity(0.8),
-            spreadRadius: 5,
-            blurRadius: 7,
-            offset: Offset(0, 3), // changes position of shadow
+              color: Colors.grey.withOpacity(0.8),
+              spreadRadius: 5,
+              blurRadius: 7,
+              offset: Offset(0, 3), // changes position of shadow
           ),
         ],
       gradient: LinearGradient(
@@ -77,10 +78,10 @@ class Hours extends StatelessWidget {
         TextSpan(text: "\n\n11:30 AM - 11:00 PM", style: TextStyle(color: Colors.white, fontSize: 20.0),),
         TextSpan(text: "\n\n\n\nStirling Hall", style: TextStyle(color: Colors.white, fontSize: 25.0, fontWeight: FontWeight.bold),),
         TextSpan(text: "\n\nMonday to Thursday", style: TextStyle(color: Colors.white, fontSize: 25.0),),
-        TextSpan(text: "\n\n5:30 PM - 11:00 PM", style: TextStyle(color: Colors.white, fontSize: 20.0),)
+        TextSpan(text: "\n\n5:30 PM - 11:00 PM\n\n", style: TextStyle(color: Colors.white, fontSize: 20.0),)
     ]),
     )]))))],
-          ),)
+          ),),)
           )])))
     ;
   }

@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'screens/hours.dart';
 import 'screens/iConsStaff.dart';
 import 'screens/settings.dart';
-import 'screens/inventory.dart';
+//import 'screens/inventory.dart';
 import 'screens/iConStaffonShift.dart';
 import 'screens/fetchDatabase.dart';
 
