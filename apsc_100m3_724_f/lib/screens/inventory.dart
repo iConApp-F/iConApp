@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'dart:convert';
-import 'package:http/http.dart' as http;
 import 'package:provider/provider.dart';
 import 'fetchDatabase.dart'; // For updating states
 import 'MyGlobals.dart' as gl;
+import 'package:badges/badges.dart';
+import 'Cart.dart';
 
 /**
  * To use this file, just import this file as the "inventory.dart";
@@ -14,22 +15,6 @@ import 'MyGlobals.dart' as gl;
 /**
  * Creating an object for each inventory item. IDs are set automatically by the database.
  */
-
-class _MyAppBar extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return SliverAppBar(
-      title: Text('Catalog', style: Theme.of(context).textTheme.headline1),
-      floating: true,
-      actions: [
-        IconButton(
-          icon: Icon(Icons.shopping_cart),
-          onPressed: () => Navigator.pushNamed(context, '/cart'),
-        ),
-      ],
-    );
-  }
-}
 
 /**
  * no idea rly
@@ -42,13 +27,11 @@ class IconsListView extends StatefulWidget {
  * main component here is the url as it's our inventory database
  */
 class IconsListViewWidget extends State<IconsListView> {
-  final Set _toBeRented = Set<InventoryData>();
-
   /**
    * checking if the clicked item is in the _toBeRented set
    */
   bool isSaved(InventoryData data) {
-    return _toBeRented.contains(data);
+    return gl.MyGlobals.toBeRented.contains(data);
   }
 
   /**
@@ -64,12 +47,17 @@ class IconsListViewWidget extends State<IconsListView> {
     return MaterialApp(
       home: Scaffold(
           appBar: AppBar(
-            title: Text('wow', style: Theme.of(context).textTheme.headline1),
+            title: Text('iCons Inventory',
+                style: Theme.of(context).textTheme.headline3),
             actions: [
               IconButton(
-                icon: Icon(Icons.shopping_cart),
-                onPressed: () => Navigator.pushNamed(context, '/cart'),
-              ),
+                  icon: Icon(Icons.shopping_cart),
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => CartView()),
+                    );
+                  }),
             ],
           ),
           body: ListView.builder(
@@ -91,14 +79,14 @@ class IconsListViewWidget extends State<IconsListView> {
                     print(isSaved(inventoryList[index]));
                     setState(() {
                       if (isSaved(inventoryList[index])) {
-                        _toBeRented.remove(inventoryList[index]);
+                        gl.MyGlobals.toBeRented.remove(inventoryList[index]);
                         print("deleted");
                       } else {
-                        _toBeRented.add(inventoryList[index]);
+                        gl.MyGlobals.toBeRented.add(inventoryList[index]);
                         print("added");
                       }
                     });
-                    print(_toBeRented.length);
+                    print(gl.MyGlobals.toBeRented.length);
                   },
                 );
               })),

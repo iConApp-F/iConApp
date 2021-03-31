@@ -6,4 +6,5 @@ class MyGlobals {
   static List<InventoryData> inventoryList = [];
   static String urL =
       'http://flutter-server-app.000webhostapp.com/inventory_list_file.php/';
+  static List<InventoryData> toBeRented = [];
 }
