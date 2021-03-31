@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'dart:convert';
-import 'package:http/http.dart' as http;
+import 'fetchDatabase.dart'; // For updating states
+import 'MyGlobals.dart' as gl;
+import 'package:badges/badges.dart';
+import 'Cart.dart';
 
 /**
  * To use this file, just import this file as the "inventory.dart";
@@ -11,30 +14,6 @@ import 'package:http/http.dart' as http;
 /**
  * Creating an object for each inventory item. IDs are set automatically by the database.
  */
-class InventoryData {
-  String id;
-  String Name;
-  String available;
-  String total;
-
-  InventoryData({
-    this.id,
-    this.Name,
-    this.available,
-    this.total,
-  });
-
-  /**
-   * reads json table of the inventory and creates an inventory object
-   */
-  factory InventoryData.fromJson(Map<String, dynamic> json) {
-    return InventoryData(
-        id: json['id'],
-        Name: json['inventory_name'],
-        available: json['inventory_available'],
-        total: json['inventory_total']);
-  }
-}
 
 /**
  * no idea rly
@@ -47,77 +26,69 @@ class IconsListView extends StatefulWidget {
  * main component here is the url as it's our inventory database
  */
 class IconsListViewWidget extends State<IconsListView> {
-  final _toBeRented = Set<
-      InventoryData>(); //still in progress. Hopefully, it will be used to store selected items
-  final String urL =
-      'http://flutter-server-app.000webhostapp.com/inventory_list_file.php/';
-
   /**
    * checking if the clicked item is in the _toBeRented set
    */
   bool isSaved(InventoryData data) {
-    return _toBeRented.contains(data);
+    return gl.MyGlobals.toBeRented.contains(data);
   }
 
   /**
    * this one fetches data from the database website, makes objects out of the them and puts them in the list "listOfItems"
    */
-  Future<List<InventoryData>> fetchItems() async {
-    var response = await http.get(urL);
-
-    if (response.statusCode == 200) {
-      final items = json.decode(response.body).cast<Map<String, dynamic>>();
-
-      List<InventoryData> listOfItems = items.map<InventoryData>((json) {
-        return InventoryData.fromJson(json);
-      }).toList();
-      return listOfItems;
-    } else {
-      throw Exception('Failed to load data.');
-    }
-  }
 
   /**
    * Main part. Still not sure what is the snapshot... oh well. This widget just displays the listOfItems as a list of clickable items.
    */
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        body: FutureBuilder<List<InventoryData>>(
-          future: fetchItems(),
-          builder: (context, snapshot) {
-            if (!snapshot.hasData)
-              return Center(
-                  child:
-                  CircularProgressIndicator()); //This one is neat. It's a progress indicator; so if there's no connection, it will go on and on
-            return ListView(
-              children: snapshot.data
-                  .map((data) => ListTile(
-                //listOfItems is displaced as a list
-                title: Text(
-                    data.Name + ": " + data.available + "/" + data.total),
-                trailing: Icon(isSaved(data)
-                    ? Icons.check
-                    : Icons.add), //just some text and icons.
-                /**
+    List inventoryList = gl.MyGlobals.inventoryList;
+    return MaterialApp(
+      home: Scaffold(
+          appBar: AppBar(
+            title: Text('iCons Inventory',
+                style: Theme.of(context).textTheme.headline3),
+            actions: [
+              IconButton(
+                  icon: Icon(Icons.shopping_cart),
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => CartView()),
+                    );
+                  }),
+            ],
+          ),
+          body: ListView.builder(
+              itemCount: inventoryList.length,
+              itemBuilder: (context, index) {
+                return ListTile(
+                  title: Text(inventoryList[index].Name +
+                      ": " +
+                      inventoryList[index].available +
+                      "/" +
+                      inventoryList[index].total),
+                  trailing: Icon(isSaved(inventoryList[index])
+                      ? Icons.check
+                      : Icons.add), //just some text and icons.
+                  /**
                  * Still working onTap thing as well _toBeRented function.
                  */
-                onTap: () {
-                  print(isSaved(data));
-                  setState(() {
-                    if (isSaved(data)) {
-                      _toBeRented.remove(data);
-                      print("deleted");
-                    } else {
-                      _toBeRented.add(data);
-                      print("added");
-                    }
-                  });
-                },
-              ))
-                  .toList(),
-            );
-          },
-        ));
+                  onTap: () {
+                    print(isSaved(inventoryList[index]));
+                    setState(() {
+                      if (isSaved(inventoryList[index])) {
+                        gl.MyGlobals.toBeRented.remove(inventoryList[index]);
+                        print("deleted");
+                      } else {
+                        gl.MyGlobals.toBeRented.add(inventoryList[index]);
+                        print("added");
+                      }
+                    });
+                    print(gl.MyGlobals.toBeRented.length);
+                  },
+                );
+              })),
+    );
   }
 }
