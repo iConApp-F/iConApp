@@ -288,7 +288,12 @@ class IndividualTextWidget extends StatelessWidget{
   Widget build (BuildContext context){
     return ListView(
         children: <Widget>[
-          Text('"This is the credits section"', style: TextStyle(fontSize: 15, fontStyle: FontStyle.italic), textAlign: TextAlign.center)
+          Text('"CREDITS\n\n\n'
+              'Leo Sandler            Homepage and Inventory Contributions\n\n'
+              'Ivan Lipski            Database and Inventory Contributions\n\n'
+              'Jacob Lambert          Icons on Shift and Staff Information\n\n'
+              'Benedikt Gregor        Hours Page and Overall App Aesthetic\n\n'
+              'Jon Karakus            Settings Page and its functionality\n\n"', style: TextStyle(fontSize: 15, fontStyle: FontStyle.italic), textAlign: TextAlign.center)
         ]
     );
   }
