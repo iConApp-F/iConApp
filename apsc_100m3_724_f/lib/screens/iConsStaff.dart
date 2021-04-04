@@ -86,7 +86,7 @@ class Staff extends StatelessWidget{
                         size: Size(90, 48),
                         //add the button
                         child: ClipRect(
-                            child: ElevatedButton(
+                            child: ElevatedButton(style: ElevatedButton.styleFrom(primary: Palette.iBlue),
                                 child: Text('MORE'),
                                 //when the button is clicked, set the index value to c and go to teh icon two page
                                 onPressed: () {

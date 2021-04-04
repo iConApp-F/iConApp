@@ -86,7 +86,7 @@ class onShiftBodyWidget extends StatelessWidget{
                         size: Size(90, 48),
                         //the button
                         child: ClipRect(
-                            child: ElevatedButton(
+                            child: ElevatedButton(style: ElevatedButton.styleFrom(primary: Palette.iBlue),
                                 child: Text('MORE'),
                                //when it is pressed set teh index number to c and go to icon two page
                                 onPressed: () {

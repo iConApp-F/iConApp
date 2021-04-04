@@ -5,6 +5,7 @@ import 'MyGlobals.dart' as gl;
 import 'package:badges/badges.dart';
 import 'Cart.dart';
 import 'AddBadge.dart';
+import 'hours.dart';
 
 /**
  * To use this file, just import this file as the "inventory.dart";
@@ -45,28 +46,30 @@ class IconsListViewWidget extends State<IconsListView> {
   Widget build(BuildContext context) {
     List inventoryList = gl.MyGlobals.inventoryList;
     return MaterialApp(
-      home: Scaffold(
-          appBar: AppBar(
-            title: Text('iCons Inventory',
-                style: Theme.of(context).textTheme.headline3),
-            actions: [
-              AddBadge(
-                  top: 8,
-                  right: 8,
-                  value: gl.MyGlobals.toBeRented.length,
-                  child:
-              IconButton(
-                  icon: Icon(Icons.shopping_cart),
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => CartView()),
-                    );
-                  }),
-            ),
-          ],
+      home: Scaffold(appBar: AppBar(title: Text('Inventory'),
+          actions: [AddBadge(
+          top: 8, right: 8, value: gl.MyGlobals.toBeRented.length,
+    child: IconButton(
+    icon: Icon(Icons.shopping_cart),
+    onPressed: () {Navigator.push(context, MaterialPageRoute(builder: (context) => CartView()),);}),),],
+          leading: IconButton(
+            icon: Image.asset('lib/images/app_swirl.png'), onPressed: (){},
           ),
-
+          flexibleSpace: Container(
+              decoration: BoxDecoration(
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.grey.withOpacity(0.7),
+                    spreadRadius: 5,
+                    blurRadius: 5,
+                    offset: Offset(0, 3), // changes position of shadow
+                  ),
+                ],
+                gradient: LinearGradient(
+                    begin: Alignment.centerLeft,
+                    end: Alignment.centerRight,
+                    colors: [Palette.iBrown, Palette.iGreen, Palette.iBlue]),)),
+          ),
           body: ListView.builder(
               itemCount: inventoryList.length,
               itemBuilder: (context, index) {
